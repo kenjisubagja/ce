@@ -1,142 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airdrop Sultan</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Membuat Efek Salju Dengan HTML5 | Jurnalweb.com</title>
+	<meta name="description" content="Tutorial cara membuat efek salju dengan html5 canvas dan javascript | Efek hujan salju ala musim dingin bisa dibuat dengan mudah untuk diterapkan di website">
+	<meta name="keywords" content="html5, canvas, html, css, javascript, tutorial, salju, efek salju, coding, programming, web development, web design">
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="wrapper">
-            <div class="logo"><a href=''>Airdrop Sultan</a></div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#tentang">Tentang kami</a></li>
-                    <li><a href="#admin">admin</a></li>
-                    <li><a href="#partners">Partners</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#cek">Cek Keaslian admin</a></li>
-                    <li><a href="https://t.me/airdropsult" class="tbl-biru">Lets Go join</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="wrapper">
-        <!-- untuk home -->
-        <section id="home">
-            <img src="sl.jpg"/>
-            <div class="kolom">
-                <p class="deskripsi">Cari duit di rumah aja</p>
-                <h2>Tetap Sehat, Tetap Semangat</h2>
-                <p>Dont't Sleep Before You Rich.</p>
-            </div>
-        </section>
 
-        <!-- untuk courses -->
-        <section id="tentang">
-            <div class="kolom">
-                <p class="deskripsi">Airdrop</p>
-                <h2>Erdrop dmna mana </h2>
-                <p>gak tau dah</p>
-                
-                <p><a href="https://t.me/airdropsult" class="tbl-biru">Join Us Mabar FF!</a></p>
-            </div>
-            <img src="https://akcdn.detik.net.id/community/media/visual/2022/06/20/garena-free-fire_169.jpeg?w=700&q=90"/>
-        </section>
+<div class="header">
+	<h1>Efek Salju Dengan HTML5 Canvas & Javascript</h1>
+	<p>Baca tutorial di <a href="http://www.jurnalweb.com/membuat-efek-salju-dengan-html5-canvas-dan-javascript">Jurnalweb.com</a></p>
+</div>
 
-        <!-- untuk tutors -->
-        <section id="admin">
-            <div class="tengah">
-                <div class="kolom">
-                    <p class="deskripsi">Admin Setempat</p>
-                    <h2>Admin</h2>
-                    <p>ya begitulah!</p>
-                </div>
+<canvas id="town" width="640" height="450"></canvas>
 
-                <div class="tutor-list">
-                    <div class="kartu-tutor">
-                        <img src="https://studio.mrngroup.co/storage/app/media/Prambors/Editorial%203/Anime-20230828121723.webp?tr=w-800"/>
-                        <p>Mahendra</p>
-                    </div>
-                    <div class="kartu-tutor">
-                        <img src="https://1.bp.blogspot.com/-nStSoBiCu90/W6CfvYB0phI/AAAAAAAACHU/dLU0DasHtk8cn_-SNidVVR0adtY-ADGUQCLcBGAs/s1600/kanna%2Bhashimoto.jpg"/>
-                        <p>Rizal</p>
-                    </div>
-                    <div class="kartu-tutor">
-                        <img src="https://berita.yodu.id/wp-content/uploads/2021/08/Yui-Aragaki-1024x576-1.jpeg"/>
-                        <p>dea</p>
-                    </div>
-                    <div class="kartu-tutor">
-                        <img src="https://media.japanesestation.com/images/750x422/2020/06/24/67262-marie-iitoyo.jpg"/>
-                        <p>Olivia</p>
-                    </div>
+<script type="text/javascript">
 
-                </div>
-            </div>
-        </section>
+var canvas = document.getElementById("town"),
+ctx = canvas.getContext("2d"),
+W = canvas.width,
+H = canvas.height,
+maxParticles = 25,
+maxParticleSize = 8,
+minParticleSize = 2,
+maxMove = 1,
+angle = 0,
+particles = [];
+	for (var i = 0; i < maxParticles; i++) {
+		particles.push({
+			x: Math.random() * W, 
+			y: Math.random() * H, 
+			wh: Math.random() * maxParticleSize + minParticleSize
+		})
+	}
+	
+function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.beginPath();
+		for (var i = 0; i < maxParticles; i++) {
+			var p = particles[i];
+			ctx.moveTo(p.x, p.y);
+      ctx.rect(p.x, p.y, p.wh, p.wh);
+      var radgrad = ctx.createRadialGradient(p.x + p.wh/2,p.y + p.wh/2,0,p.x + p.wh/2,p.y + p.wh/2,p.wh/2);
+  radgrad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+  radgrad.addColorStop(0.5, 'rgba(255, 255, 255, .8)');
+  radgrad.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = radgrad;
+      ctx.fill();
+		}
+		update();
+	}
+	
+	function update() {
+		angle += 0.01;
+		for (var i = 0; i < maxParticles; i++) {
+			var p = particles[i];
+			p.y += Math.cos(angle) + p.wh/4;
+			p.x += Math.sin(angle) * 2;
+			if (p.x > W+maxMove || p.x < -maxMove || p.y > H) {
+				if (i%3 > 0) {
+					particles[i] = {x: Math.random() * W, y: -(maxMove), wh: p.wh };
+				} else {
+					if (Math.sin(angle) > 0) {
+						particles[i] = {x: -maxMove, y: Math.random()*H, wh: p.wh };
+					} else {
+						particles[i] = {x: W+maxMove, y: Math.random()*H, wh: p.wh };
+					}
+				}
+			}
+		}
+  requestAnimationFrame(draw);
+	}
+draw();	
 
-        <!-- untuk partners -->
-        <section id="partners">
-            <div class="tengah">
-                <div class="kolom">
-                    <p class="deskripsi">Our Top Partners</p>
-                    <h2>Partners</h2>
-                    <p>Kami sudah kerja sama sama mereka tapi gue gak dapet duid kwokwokwow.</p>
-                </div>
+</script>
 
-                <div class="partner-list">
-                    <div class="kartu-partner">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Logo-OKX.png"/>
-                    </div>
-                    <div class="kartu-partner">
-                        <img src="https://www.logo.wine/a/logo/Binance/Binance-Vertical-Logo.wine.svg"/>
-                    </div>
-                    <div class="kartu-partner">
-                        <img src="https://vectorseek.com/wp-content/uploads/2023/05/Mexc-Global-Logo-Vector.jpg"/>
-                    </div>
-                    <div class="kartu-partner">
-                        <img src="https://www.designevo.com/res/templates/thumb_small/encircled-branches-and-book.png"/>
-                    </div>
-                    <div class="kartu-partner">
-                        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*sij9eOziG05teqofYUvkwg.jpeg"/>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="contact">
-        <div class="wrapper">
-            <div class="footer">
-                <div class="footer-section">
-                    <h3>mahendra</h3>
-                    <p>Founder</p>
-                </div>
-                <div class="footer-section">
-                    <h3>About</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, culpa!</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email</p>
-                    <p>telegram</p>
-                    <p>twiter</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Social</h3>
-                    <p><b>Twiter: </b>Airdrop sultan</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="copyright">
-        <div class="wrapper">
-            &copy; 2024. <b>kenji subagja</b> All Rights Reserved.
-        </div>
-    </div>
-    
 </body>
 </html>
