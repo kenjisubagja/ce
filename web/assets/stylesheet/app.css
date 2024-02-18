@@ -235,8 +235,6 @@ body {
 
 .grid{
   display: grid;
-  justify-content: center;
-  align-items: center;
   grid-template-columns: repeat(3,1fr);
   margin: 80px;
   grid-gap: 10px;
