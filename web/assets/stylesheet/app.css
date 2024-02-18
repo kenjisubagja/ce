@@ -1,271 +1,402 @@
-@import url("https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap");
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-body {
-  background: linear-gradient(#DC143C 0%, #dd4c4f 40%, #F0F8FF 100%);
-  font-family: "Poppins", sans-serif;
-}
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="//db.onlinewebfonts.com/c/021f3eb1da35b2a042907dc870c00b9c?family=TwentiethCenturyW01-XBdCn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/stylesheet/style.css" />
+    <link rel="stylesheet" href="assets/stylesheet/app.css" />
+    <link rel="stylesheet" href="assets/stylesheet/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.css"
+    />
+    <meta name='description' content='Airdrop sultan'/> 
+ <meta name='keywords' content='come see and join us'/> 
+<link rel="icon" type="image/gif" href="assets/img/sl.jpg">
+    <title>Airdrop Sultan</title>
+  </head>
 
-.bg-light {
-  background: #00000000 !important;
-  /* backdrop-filter: blur(3px);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.589); */
-  transition: all 0.5s;
-}
-.bg-light.scrolled {
-  background: #ffffff !important;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.589);
-  transition: all 0.5s;
-}
-.nav a {
-  color: white;
-}
-.nav a:hover {
-  color: rgb(192, 191, 191);
-}
-.nav.scrolled a {
-  color: #dd4c4f;
-}
-.nav.scrolled a:hover {
-  color: rgb(208, 157, 255);
-}
-.buttonToggle {
-  display: none;
-}
-.initial {
-  font-family: "Vampiro One", cursive;
-  font-size: 30px;
-  margin: -10px;
-}
-.all-body-cover {
-  margin-top: 200px;
-}
-.opening {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-}
-.bole{
-  color: white;
-  display: flex;
-  align-items: right;
-  justify-content: center;
-  margin-top: 15px;
-  flex-direction: column;
-  font-family: "Poppins", sans-serif;
-}
-.nama {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-  flex-direction: column;
-  font-family: "Poppins", sans-serif;
-}
-.img-thumbnail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.waves {
-  margin-top: -100px;
-  margin-bottom: 70px;
-}
-.firstContainer {
-  background: linear-gradient(
-    #ffffff 0%,
-    #ffffff 50%,
-    #ffffffde 70%,
-    #ffffffb6 75%,
-    #ffffff7e 80%,
-    #ffffff49 85%,
-    #ffffff1f 90%,
-    #ffffff00 100%
-  );
-  margin-top: -80px;
-  margin-bottom: 50px;
-}
+  <body>
+    <ul class="nav justify-content-center bg-light fixed-top">
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="#"> -->
+        <a
+          class="buttonToggle"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+          ><i class="fas fa-bars toggleSlide"></i
+        ></a>
 
-.content {
-  padding-bottom: 400px;
-}
-.nameHeading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.subNameHeading {
-  display: none;
-}
-.content .row {
-  padding-bottom: 40px;
-}
-.education {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.itemEdu {
-  padding: 10px;
-}
-.startEnd {
-  margin-bottom: -1px;
-}
-.achive {
-  margin-top: -200px;
-  margin-bottom: 30px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.wavesss {
-  margin-bottom: -20px;
-}
-.thirdContainer {
-  background-color: #fff;
-  margin-top: 20px;
-}
-.projects {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 20px;
-}
+        <div
+          class="offcanvas offcanvas-start"
+          data-bs-scroll="true"
+          tabindex="-1"
+          id="offcanvasWithBothOptions"
+          aria-labelledby="offcanvasWithBothOptionsLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+              Please select a menu :
+            </h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul>
+              <li>
+                <a class="nav-link" href="#Biodata">Biodata</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#Achievements">Patners</a>
+              </li>
+              <li>
+                
+              <li>
+                <a class="nav-link" href="#Contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- </a> -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link initial" href="#" aria-current="page">Airdrop Sultan</a>
+      </li>
 
-.fourthContainer {
-  margin-top: 200px;
-}
-.fivethContainer {
-  margin-top: -150px;
-  background-color: #fff;
-}
-.linkSosmed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-.itemSosmed {
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-}
-.contactMe {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -90px;
-}
-.partner-list {
-    width: 75%;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
+      <li class="nav-item-item">
+        <a class="nav-link" href="#Biodata">Biodata</a>
+      </li>
+      <li class="nav-item-item">
+        <a class="nav-link" href="#Achievements">Patrners</a>
+      </li>
+      <li class="nav-item-item">
+        <a class="nav-link" href="#Contact">Contact</a>
+      </li>
+    </ul>
+    <div class="all-body-cover">
+      <img
+        width="200px"
+        src="assets/img/sl.jpg"
+        class="img-thumbnail rounded-circle mx-auto d-block"
+        alt="..."
+      />
+      <div class="nama">
+        <h4 class="text-center fw-bold">Airdrop Sultan</h4>
+        <h5 class="text-center">Don't Sleep Before You Rich</h5>
+      </div>
 
-.kartu-partner {
-    width: 10%;
-    margin: 0 auto;
-    border-radius: 50%;
-}
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#ffffff"
+          fill-opacity="1"
+          d="M0,160L48,149.3C96,139,192,117,288,144C384,171,480,245,576,272C672,299,768,277,864,250.7C960,224,1056,192,1152,186.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+      <div class="firstContainer">
+        <div class="content">
+          <h2
+            data-aos="fade-up"
+            data-aos-duration="800"
+            id="Biodata"
+            class="nameHeading fw-bold"
+          >
+            Airdrop Sultan??
+          </h2>
+          <div class="container text-center">
+            <div class="row">
 
-.kartu-partner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%; 
-    display: inline-block; 
-}
+              <div
+                data-aos="fade-up"
+                data-aos-duration="800"
+                class="col-sm-4 mb-2"
+              >
+                Airdrop Sultan is a marketing agency in Indonesia, focusing on our clients, airdrop sultan has a team that is experienced and has full knowledge of crypto, and also our partners come from well-known companies such as mexc, bingx, kucoin and others. Our goal is to pump ordinary people into the world of crypto. We also have a 24 hour active group, our group consists of experts and seniors, the aim of the group is to bring together experts and beginners so they can help each other.
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="800"
+                class="col-sm-4 mb-2"
+              >
+                <h4 class="subNameHeading fw-bold">Are you interested?</h4>
+                <div class="education">
+                  <!-- Button trigger modal -->
+                 
+                   <a class="btn btn-primary mx-info" href="https://t.me/airdropsult" role="button"
+                    >Join Us!</a>
 
-.col-sm-4 {
-  width: 100%;
-}
-.article {
-            border: 1px solid fuchsia;
-            padding: 1em;
-            margin-bottom: 1em;
-}
-* {
-  box-sizing: border-box;
-}
+                  <!-- Modal -->
+                 
+                  
+         
+                </div>
+              </div>
+              <div data-aos="fade-up" data-aos-duration="800" class="col-sm-4">
+                Our Vision is to share knowledge about Crypto kith the Whole World, 
+And Mission is to Connect Beginners and experts to help and Teach each other world Blokchain.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class ="container">
+        <main class="grid">
+          <article>
+            <img src="assets/img/roket.png" width="110px" height="110px">
+            <div class="konten">
+              <H2>Earliest</H2>
+              <p>We always distribute airdrops earlier than other communities</p>
+            </div>
+          </article>
+          <article>
+            <img src="assets/img/pen.png" width="110px" height="110px">
+            <div class="konten">
+              <H2>1000% Legit</H2>
+              <p>We always look for sources of information before sharing airdrops with groups</p>
+            </div>
+          </article>
+          <article>
+            <img src="assets/img/comunity.png" width="110px" height="110px">
+            <div class="konten">
+              <H2>Interactive</H2>
+              <p>Our community is always active, because our motto is don't sleep before you get rich</p>
+            </div>
+          </article>
+        </main>
+      </div>
+    
+    <!-- LOGO DISINI -->
+          <div class="secondContainer">
+      <h2
+            data-aos="fade-up"
+            data-aos-duration="800"
+            id="Achievements"
+            class="nameHeading fw-bold"
+          >
+            Patners
+          </h2>
+  </div>
+      <br>
+      <br>
+                   
+             
+                <div class="container">
+                  <div class="row">
+                    
+                  
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+                <div class="partner-list">
+                    <div class="kartu-partner">
+                        <img src="assets/img/mexc.jpg" />
+                    </div>
+                    <div class="kartu-partner">
+                        <img src="assets/img/k.png"/>
+                    </div>
+                    <div class="kartu-partner">
+                        <img src="assets/img/bing.jpg"/>
+                    </div>
+                    <div class="kartu-partner">
+                        <img src="assets/img/b.jpg"/>
+                    </div>
+                    <div class="kartu-partner">
+                        <img src="assets/img/ok.svg"/>
+                    </div>
+                    <div class="kartu-partner">
+                        <img src="assets/img/p.jpg"/>
+                    </div>
+                </div>
+              </div>
+            </div>
+        
+                <br>
+  
+    
+    <div class="fourthContainer">
+      <h2
+        data-aos="fade-up"
+        data-aos-duration="800"
+        id="Certifications"
+        class="achive text-center fw-bold"
+      >
+        Detail patrners
+      </h2>
+      <div class="container">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="800"
+          class="table-responsive"
+        >
+          <table class="table mx-auto table-hover table-light table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Organizer</th>
+                <th scope="col">Date</th>
+                <th scope="col">View Web</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mexc</td>
+                <td>Exchange</td>
+                <td>20 December, 2023</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://www.mexc.com" role="button"
+                    >visit</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>KuCoin</td>
+                <td>Exchange</td>
+                <td>3 January, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://www.kucoin.com" role="button"
+                    >visit</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>BingX</td>
+                <td>Exchange</td>
+                <td>8 January, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://bingx.com" role="button"
+                    >visit</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>bybit</td>
+                <td>Exchange</td>
+                <td>19 January, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://www.bybit.com" role="button"
+                    >visit</a
+                  >
+                </td>
+              
+              <tr>
+                <th scope="row">5</th>
+                <td>Okx</td>
+                <td>Exchange</td>
+                <td>22 January, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://www.okx.com/" role="button"
+                    >visit</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>tokocrypto</td>
+                <td>Exchange</td>
+                <td>27 January, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://www.tokocrypto.com/" role="button"
+                    >visit</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <svg
+      class="wavesContact"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+    >
+      <path
+        fill="#ffffff"
+        fill-opacity="1"
+        d="M0,32L60,58.7C120,85,240,139,360,133.3C480,128,600,64,720,69.3C840,75,960,149,1080,154.7C1200,160,1320,96,1380,64L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+      ></path>
+    </svg>
+    <div class="fivethContainer">
+      <h2 id="Contact" class="contactMe fw-bold">CONTACT</h2>
+      <div class="container">
+        <div class="linkSosmed">
+          <a class="itemSosmed" href="https://t.me/WibuExchanger"
+            ><i class="fab fa-telegram"></i
+          ></a>
+          <a class="itemSosmed" href="https://x.com/airdropsultanJP"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a class="itemSosmed" href="https://github.com/"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+        <p class="text-center">Created by <a href="https://twitter.com/Kenjisubagja">@kenjisubagja</a></p>
+      </div>
+    </div>
+    <script src="assets/stylesheet/app.js"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
 
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
-
-/* Remove extra left and right margins, due to padding in columns */
-.row {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-}
-
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
-.grid{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  margin: 80px;
- 
-  grid-gap: 10px;
-}
-img{
-  object-fit: cover;
-}
-.grid > article{
-  box-shadow: 10px 5px 5px 0px black;
-  border-radius: 20px;
-  text-align: center;
-  background: whitesmoke;
-  width: 220px;
-  transition: transform;
-}
-.grid > article img{
-  border-bottom-left-radius:30px ;
-  border-top-right-radius: 30px;  
-}
-.grid > article:hover{
-  transform: scale(1.2) ;
-}
-@media (max-width:1000px){
-  .grid{
-    grid-template-columns: repeat(1,1fr);
-  }
-}
-@media (max-width:500px){
-  .grid{
-    grid-template-columns: repeat(1,1fr);
-  }
-}
-
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
