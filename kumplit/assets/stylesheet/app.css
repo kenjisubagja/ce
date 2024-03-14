@@ -4,72 +4,6 @@ body {
   background: linear-gradient(#DC143C 0%, #DC143C 80%, #F0F8FF 100%);
   font-family: "Poppins", sans-serif;
 }
-.btn-floating{
-  position: absolute;
-  right: 25px;
-  overflow: hidden;
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  color: white;
-  transition: .2s;
-}
-.btn-floating:hover{
-  width: auto;
-  padding: 0  20px;
-  cursor: pointer;
-}
-.btn-floating span{
-  font-size: 15px;
-  margin-left: 5px;
-  transition: .2s;
-  line-height: 0px;
-  display: none;
-}
-.btn-floating:hover span{
-  display: inline-block;
-}
-.btn-floating:hover img{
-  margin-bottom: -3px;
-  display: inline-block;
-  width: 46px;
-  height: 46px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.btn-floating.telegram{
-  bottom: 20px;
-  background-color: #0088cc ;
-  border:  0px solid white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-.btn-floating.telegram:hover{
-  background-color:  #0088cc;
-}
-.btn-floating>img{
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid;
-  box-shadow: 0 1px 1px #000000;
-}
-.btn-floating.twiter{
-  bottom: 90px;
-  background-color: #000000 ;
-  border:  1px solid rgb(0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-.btn-floating.twiter:hover{
-  background-color:  #000000;
-}
-
 
 .bg-light {
   background: #00000000 !important;
@@ -323,7 +257,7 @@ img{
 .grid > article:hover{
 
 }
-.grid 
+
 @media (max-width:1000px){
   .grid{
     grid-template-columns: repeat(1,1fr);
@@ -393,4 +327,69 @@ table>tbody>tr{
 }
 table>tbody>tr:nth-child(even){
   background-color: antiquewhite;
+}
+.btn-floating{
+  position: absolute;
+  right: 25px;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  color: white;
+  transition: .2s;
+}
+.btn-floating:hover{
+  width: auto;
+  padding: 0  20px;
+  cursor: pointer;
+}
+.btn-floating span{
+  font-size: 15px;
+  margin-left: 5px;
+  transition: .2s;
+  line-height: 0px;
+  display: none;
+}
+.btn-floating:hover span{
+  display: inline-block;
+}
+.btn-floating:hover img{
+  margin-bottom: -3px;
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.btn-floating.telegram{
+  bottom: 20px;
+  background-color: #0088cc ;
+  border:  0px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.btn-floating.telegram:hover{
+  background-color:  #0088cc;
+}
+.btn-floating>img{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid;
+  box-shadow: 0 1px 1px #000000;
+}
+.btn-floating.twiter{
+  bottom: 90px;
+  background-color: #000000 ;
+  border:  1px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.btn-floating.twiter:hover{
+  background-color:  #000000;
 }
