@@ -257,7 +257,6 @@ img{
 .grid > article:hover{
 
 }
-
 @media (max-width:1000px){
   .grid{
     grid-template-columns: repeat(1,1fr);
@@ -329,12 +328,14 @@ table>tbody>tr:nth-child(even){
   background-color: antiquewhite;
 }
 .btn-floating{
-  position: absolute;
+  position: fixed;
   right: 25px;
   overflow: hidden;
   width: 50px;
   height: 50px;
   border-radius: 100px;
+  border: 0;
+  z-index: 9999;
   color: white;
   transition: .2s;
 }
